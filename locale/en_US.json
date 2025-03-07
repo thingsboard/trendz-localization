@@ -119,8 +119,55 @@
       "selected-item": "Selected Item",
       "setup-model": "Setup Model"
     },
+    "assistant": {
+      "ai-assistant": "AI Assistant",
+      "agents-action": {
+        "bar-expert": "Configuring bar chart",
+        "calendar-expert": "Configuring heatmap calendar",
+        "card-expert": "Configuring card",
+        "data-expert": "Grouping and aggregating values",
+        "date-grouper-expert": "Identifying the date grouping",
+        "date-picker-expert": "Identifying the time range",
+        "filter-expert": "Configuring necessary filters",
+        "general-view-expert": "Selecting view type",
+        "heatmap-expert": "Configuring heatmap",
+        "line-expert": "Configuring line chart",
+        "pie-expert": "Configuring pie chart",
+        "table-expert": "Configuring table",
+        "topology-expert": "Looking for relevant business entities fields"
+      },
+      "agents-error": {
+        "bar-expert": "Failed to configure bar chart",
+        "calendar-expert": "Failed to configure heatmap calendar",
+        "card-expert": "Failed to configure card",
+        "data-expert": "Failed to group and aggregate values",
+        "date-grouper-expert": "Failed to identify the date grouping",
+        "date-picker-expert": "Failed to identify the time range",
+        "filter-expert": "Failed to configure necessary filters",
+        "general-view-expert": "Failed to select view type",
+        "heatmap-expert": "Failed to configure heatmap",
+        "line-expert": "Failed to configure line chart",
+        "pie-expert": "Failed to configure pie chart",
+        "table-expert": "Failed to configure table",
+        "topology-expert": "Failed to find relevant business entities fields"
+      },
+      "app": "App",
+      "assistant": "Assistant",
+      "assistant-prompt": "What you need to do?",
+      "chat": "Chat",
+      "delete-confirmation": "Do you confirm the deletion of this chat?",
+      "edit-message": "Edit last message",
+      "message": "Message",
+      "message-error": "Error message",
+      "messages": "Messages",
+      "new-chat": "New chat",
+      "new-message": "New message",
+      "question-example": "Questions example",
+      "type-message": "Type your message..."
+    },
     "business-entities": {
       "add-field": "Add field",
+      "all-entities": "All entities",
       "all-items": "All items",
       "business-entities": "Business entities",
       "business-entity": "Business entity",
@@ -132,6 +179,7 @@
       "delete-warning": "Deleting this business entity is permanent and cannot be reverted. Are you sure that you want to delete it?",
       "delete-warning-dependency": "Deleting this business entity is permanent and cannot be reverted. It is currently used in other entities, which might be affected by its removal. Are you sure that you want to delete it?",
       "direction-required": "Direction is required field",
+      "entity-description": "Entity description",
       "entity-type-required": "Entity type is required field",
       "field-type": "Field type",
       "field-type-required": "Field type is required field",
@@ -190,6 +238,7 @@
     },
     "dashboard": {
       "create-alias": "Create alias from filter",
+      "dashboard": "Dashboard",
       "dashboard-name": "Dashboard name",
       "dashboard-open": "Open dashboard in separate window",
       "link-copied": "Link copied",
@@ -198,7 +247,7 @@
       "select-state": "Select state"
     },
     "datakey": {
-      "advanced": "Fdvanced",
+      "advanced": "Advanced",
       "color": "Color",
       "delta-calculation": "Calculate DELTA",
       "general": "General",
@@ -208,7 +257,7 @@
     "datepicker": {
       "by": "by",
       "calendar": "Calendar",
-      "custom-range": "Custom range",
+      "custom-range": "Custom",
       "date-vs-month": "date vs month",
       "dec-jan": "Dec-Jan",
       "every": "every",
@@ -296,6 +345,7 @@
       "min-score": "Min Score",
       "name": "Name",
       "no-rows": "No rows to show",
+      "origin": "Origin",
       "predicted-field": "Predicted Field",
       "saving-to-tb": "Saving Telemetry to TB",
       "score": "Score",
@@ -309,13 +359,37 @@
       "updated": "Updated"
     },
     "home": {
+      "add-new-view": "Add new view",
+      "collections": "Collections",
+      "create-view": "Create View",
+      "favourites": "Favourites",
+      "home-menu": {
+        "alarm-report": "Alarm report",
+        "bar": "Bar",
+        "card": "Card",
+        "card-with-line": "Card with line chart",
+        "heatmap": "Heat map",
+        "heatmap-calendar": "Heat map calendar",
+        "line": "Line",
+        "pie": "Pie",
+        "scatter": "Scatter",
+        "table": "Table"
+      },
       "logout": "Logout",
       "logout-request-title": "Are you sure you want to logout?",
-      "profile": "Profile"
+      "no-collections": "No other collections",
+      "profile": "Profile",
+      "result": "Result",
+      "select-entity": "Select entity",
+      "start-exploration": "Or select Entity to start exploration",
+      "tooltip-show-subcustomers": "Show subcustomers collections and views",
+      "view-collections": "View Collections",
+      "views": "Views",
+      "your-collections": "Your collections"
     },
     "image-input": {
       "browse": "Browse",
-      "drop-images-or": "Drag and drop an images or",
+      "drop-images-or": "Drag and drop an image or",
       "or": "or"
     },
     "labels": {
@@ -472,11 +546,15 @@
     },
     "tasks": {
       "cancel-task": "Cancel task",
+      "clear-all-executions": "Clear All Executions",
+      "clear-all-executions-warning": "Are you sure that you want to clear all the executions of all your tasks?",
+      "execute-task": "Execute Task",
       "execution-status": "Execution Status",
       "executions": "Executions",
       "go-to-entity": "Go to Entity",
       "go-to-task": "Go to Task",
       "jobs": "jobs",
+      "last-execution": "Last Execution",
       "last-execution-time": "Last execution time",
       "not-active": "Not Active",
       "run-in-background": "Run in background",
@@ -509,13 +587,15 @@
         "filter-request": "Load view filter",
         "find-anomalies": "Find anomalies",
         "job-type": "Job Type",
-        "pred-model-accuracy": "Calculate model accuracy",
+        "pred-model-accuracy": "Prediction model accuracy",
         "pred-model-partial-fit": "Retrain model",
         "pred-model-refresh": "Save prediction model result to TB",
         "pred-model-train": "Train prediction model",
         "save-calc-result": "Save calculation result to TB",
         "save-telemetry": "Save telemetry to TB",
         "test-calc-field": "Test calculation",
+        "topology-discovery": "Topology discovery",
+        "view-report-assistance": "AI Assistant response",
         "view-report-build": "Build view report"
       }
     },
@@ -557,7 +637,8 @@
         "prediction-range": "Length of prediction period (as number of selected units).",
         "prediction-segment": "Select a segment to compare real data with predicted values.",
         "segment-strategy": "The algorithm which would be used to distribute testing segments over historical data",
-        "segments-amount": "The system divides real-time telemetry into segments to calculate prediction accuracy. With <b>Auto mode</b>, the system automatically selects the optimal number of segments. With <b>Manual mode</b>, you can specify the number of segments yourself."
+        "segments-amount": "The system divides real-time telemetry into segments to calculate prediction accuracy. With <b>Auto mode</b>, the system automatically selects the optimal number of segments. With <b>Manual mode</b>, you can specify the number of segments yourself.",
+        "timerange-warning": "Selected timerange is insufficient to produce a valid result. You can train the model on this data, but the prediction accuracy might be low."
       },
       "states": {
         "doc": "View States docs"
@@ -650,32 +731,6 @@
       "topology-discovery-finished": "Topology Discovery Finished",
       "topology-settings": "Topology Settings"
     },
-    "tz-home": {
-      "add-new-view": "Add new view",
-      "collections": "Collections",
-      "create-view": "Create View",
-      "favourites": "Davourites",
-      "home-menu": {
-        "alarm-report": "Alarm report",
-        "bar": "Bar",
-        "card": "Card",
-        "card-with-line": "Card with line chart",
-        "heatmap": "Heat map",
-        "heatmap-calendar": "Heat map calendar",
-        "line": "Line",
-        "pie": "Pie",
-        "scatter": "Scatter",
-        "table": "Table"
-      },
-      "no-collections": "No other collections",
-      "result": "Result",
-      "select-entity": "Select entity",
-      "start-exploration": "Or select Entity to start exploration",
-      "tooltip-show-subcustomers": "Show subcustomers collections and views",
-      "view-collections": "View Collections",
-      "views": "Views",
-      "your-collections": "Your collections"
-    },
     "unit": {
       "day": "day",
       "hour": "hour",
@@ -689,6 +744,7 @@
       "last-4-weeks": "Last 4 weeks",
       "last-6-months": "Last 6 months",
       "last-7-days": "Last 7 days",
+      "last-year": "Last year",
       "minute": "minute",
       "month": "month",
       "prev-month": "Prev Month",
@@ -701,11 +757,12 @@
       "this-week": "This Week",
       "this-year": "This Year",
       "unit": "Unit",
-      "week": "Week",
+      "week": "week",
       "year": "Year"
     },
     "views": {
       "add-to-favorite": "Add to favourite",
+      "bad-anomaly-model": "This model contains errors. Try to choose another one.",
       "build-report": "Build report",
       "cancel-changes": "Cancel changes",
       "cancel-loading": "Cancel loading",
@@ -723,10 +780,12 @@
       "loading-time": "Time spent for loading",
       "main-value": "Main Value",
       "no-data": "No data",
+      "no-data-anomaly": "There are no anomalies for the selected period",
       "remove-view": "Remove view",
       "save-changes": "Save changes",
+      "save-config": "Save config",
       "sector-name": "Sector Name",
-      "sector-value": "alue",
+      "sector-value": "Sector Value",
       "see-task": "See task",
       "series": "Series",
       "settings": {
@@ -766,6 +825,7 @@
         },
         "general": {
           "anomaly-selection": "Default anomaly selection",
+          "card-icon": "Card icon",
           "column-fit": "Column fit",
           "dashed-line": "Dashed line",
           "enable-comparison": "Enable comparison",
@@ -778,7 +838,7 @@
           "full-stacked-bar": "100% Stacked Bar",
           "hide-legend": "Hide legend",
           "hide-xaxis-label": "Hide X-axis label",
-          "hide-yaxis-label": "Hide Y-axis labelY",
+          "hide-yaxis-label": "Hide Y-axis label",
           "horizontal-bar": "Horizontal Bar",
           "legend-position": "Legend position",
           "manual-xaxis-range": "Manual X axis range",
@@ -790,6 +850,7 @@
           "round-bar": "Round Bar",
           "select-top": "Select top",
           "show-export": "Show daterange and filters information in XLS/XLSX file",
+          "show-label": "Show label",
           "show-labels": "Show labels",
           "show-sector-name": "Show Sector Name",
           "show-sector-percent": "Show Sector Percent",
@@ -799,6 +860,7 @@
           "show-toolbox-zoom": "Show toolbox (export and zoom)",
           "show-total": "Show total row",
           "size-content": "Size content",
+          "size-label": "Size label",
           "sort-ascending": "Ascending",
           "sort-bars": "Sort bars",
           "sort-column": "Sort column",
