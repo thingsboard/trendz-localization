@@ -117,53 +117,80 @@
       "review": "Review",
       "segment-timerange": "Segment timerange",
       "selected-item": "Selected Item",
+      "selected-model": "Selected Model",
       "setup-model": "Setup Model"
     },
     "assistant": {
       "ai-assistant": "AI Assistant",
       "agents-action": {
         "bar-expert": "Configuring bar chart",
+        "business-analytic-expert": "Rephrasing user input",
         "calendar-expert": "Configuring heatmap calendar",
         "card-expert": "Configuring card",
+        "custom-prompt-expert": "Implying custom configs",
         "data-expert": "Grouping and aggregating values",
         "date-grouper-expert": "Identifying the date grouping",
         "date-picker-expert": "Identifying the time range",
         "filter-expert": "Configuring necessary filters",
+        "filter-query-analyzer-expert": "Identifying necessary filter fields",
         "general-view-expert": "Selecting view type",
+        "group-finder-expert": "Looking for the most relevant group of entities",
         "heatmap-expert": "Configuring heatmap",
+        "input-expert": "Processing your input",
         "line-expert": "Configuring line chart",
+        "output-expert": "Generating response",
         "pie-expert": "Configuring pie chart",
+        "query-analyzer-expert": "Identifying fields for visualization",
+        "scatter-expert": "Configuring scatter plot",
+        "state-expert": "Defining a workflow",
         "table-expert": "Configuring table",
+        "topic-router-expert": "Defining conversation topic",
         "topology-expert": "Looking for relevant business entities fields"
       },
       "agents-error": {
         "bar-expert": "Failed to configure bar chart",
+        "business-analytic-expert": "Failed to rephrase user input",
         "calendar-expert": "Failed to configure heatmap calendar",
         "card-expert": "Failed to configure card",
+        "custom-prompt-expert": "Failed to apply custom configs",
         "data-expert": "Failed to group and aggregate values",
         "date-grouper-expert": "Failed to identify the date grouping",
         "date-picker-expert": "Failed to identify the time range",
         "filter-expert": "Failed to configure necessary filters",
+        "filter-query-analyzer-expert": "Failed to identify necessary filter fields",
         "general-view-expert": "Failed to select view type",
+        "group-finder-expert": "Failed to find the most relevant group of entities",
         "heatmap-expert": "Failed to configure heatmap",
+        "input-expert": "Failed to process your input",
         "line-expert": "Failed to configure line chart",
+        "output-expert": "Failed to generate response",
         "pie-expert": "Failed to configure pie chart",
+        "query-analyzer-expert": "Failed to identify fields for visualization",
+        "scatter-expert": "Failed to configure scatter plot",
+        "state-expert": "Failed to define workflow",
         "table-expert": "Failed to configure table",
+        "topic-router-expert": "Failed to define conversation topic",
         "topology-expert": "Failed to find relevant business entities fields"
       },
       "app": "App",
       "assistant": "Assistant",
+      "assistant-interpretation": "Assistant’s interpretation",
       "assistant-prompt": "What you need to do?",
+      "chart-summary": "Chart Summary",
       "chat": "Chat",
+      "chats": "Chats",
+      "chat-current": "Current Chat",
       "delete-confirmation": "Do you confirm the deletion of this chat?",
       "edit-message": "Edit last message",
+      "get-chart-summary": "Get chart summary",
       "message": "Message",
       "message-error": "Error message",
       "messages": "Messages",
       "new-chat": "New chat",
-      "new-message": "New message",
+      "new-conversation": "New conversation",
       "question-example": "Questions example",
-      "type-message": "Type your message..."
+      "type-message": "Type your message...",
+      "view-generated": "The view was successfully generated."
     },
     "business-entities": {
       "add-field": "Add field",
@@ -305,7 +332,8 @@
       "yearmonth": "yearmonth"
     },
     "details": {
-      "details": "Details"
+      "details": "Details",
+      "see-details": "See details"
     },
     "device": {
       "active": "Active",
@@ -477,6 +505,14 @@
     "profile": {
       "profile": "Profile"
     },
+    "prompts": {
+      "delete-confirmation": "Do you confirm the deletion of this prompt?",
+      "edit-prompt": "Edit prompt",
+      "edit-prompt-system": "You can`t edit system prompt",
+      "new-prompt": "New Prompt",
+      "prompts": "Prompts",
+      "prompt-id": "Copy prompt ID"
+    },
     "relation": {
       "add": "Add relations",
       "direction": "Direction",
@@ -530,12 +566,14 @@
       "help-mode-enable": "Enable help user mode",
       "import-config": "Import configuration",
       "link-to-platform": "Link to external IoT platform (https://your-link-to-platform)",
+      "module-management": "JS summary module management",
       "see-all-data-source": "See all data sources",
       "signing-key": "Signing key",
       "skip-duplicates": "Skip duplicates",
       "tab-title": "Tab title",
       "update-signing-key": "Update signing key",
       "upload-bundle": "Upload bundle",
+      "upload-module": "Upload module",
       "url": "URL",
       "url-path": "URL path",
       "url-path-tooltip": "The URL path after the domain name. After updating this field, a page reload is required.",
@@ -549,6 +587,7 @@
       "clear-all-executions": "Clear All Executions",
       "clear-all-executions-warning": "Are you sure that you want to clear all the executions of all your tasks?",
       "execute-task": "Execute Task",
+      "execute-time-unit-beginning": "Execute at the beginning of the time unit",
       "execution-status": "Execution Status",
       "executions": "Executions",
       "go-to-entity": "Go to Entity",
@@ -584,19 +623,23 @@
         "anomaly-autodiscovery": "Anomaly autodiscovery",
         "build-model": "Build anomaly model",
         "cache-refresh": "Refresh cache",
+        "custom-prompt": "Run custom prompt",
         "filter-request": "Load view filter",
         "find-anomalies": "Find anomalies",
         "job-type": "Job Type",
+        "migration-import": "Import configuration",
         "pred-model-accuracy": "Prediction model accuracy",
         "pred-model-partial-fit": "Retrain model",
         "pred-model-refresh": "Save prediction model result to TB",
         "pred-model-train": "Train prediction model",
         "save-calc-result": "Save calculation result to TB",
         "save-telemetry": "Save telemetry to TB",
+        "task-sequence-execution": "Execute task sequence",
         "test-calc-field": "Test calculation",
         "topology-discovery": "Topology discovery",
         "view-report-assistance": "AI Assistant response",
-        "view-report-build": "Build view report"
+        "view-report-build": "Build view report",
+        "view-summary": "Generate view summary"
       }
     },
     "timeinterval": {
@@ -619,6 +662,7 @@
         "function": "This field serves as the input area for the Calculation Field code",
         "item": "Device/asset whose telemetry you want to use for testing your function.",
         "key": "Telemetry name for saving calculation data in ThingsBoard: \"_ECD_your-calculation-key\"",
+        "range-by-minutes": "For better performance and system efficiency, we recommend avoiding minute-level aggregation.",
         "time-range-strategy": "During the refresh task execution, the system loads data by the time range set by a particular strategy. <b>Dynamic strategy</b> will load only new data for the calculation field that appeared since the last execution. <b>Fixed strategy</b> will use the same predefined range for each next execution."
       },
       "dashboard": {
@@ -781,6 +825,7 @@
       "main-value": "Main Value",
       "no-data": "No data",
       "no-data-anomaly": "There are no anomalies for the selected period",
+      "open-view-new-tab": "Open View in the New Tab",
       "remove-view": "Remove view",
       "save-changes": "Save changes",
       "save-config": "Save config",
@@ -896,6 +941,7 @@
         "view-mode-fields": {
           "get-filter-from-url": "GET filter values from url",
           "hidden-filters": "Hidden filters",
+          "hide-ai-summary-button": "Hide AI Summary button",
           "hide-anomaly-chart": "Hide anomalies chart",
           "hide-anomaly-list": "Hide anomalies list",
           "hide-by-option": "Hide By Option",
@@ -962,6 +1008,7 @@
     "widget": {
       "all": "All",
       "description": "Description",
+      "description-enter": "Enter description",
       "system": "System",
       "title": "Title"
     },

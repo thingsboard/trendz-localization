@@ -117,53 +117,80 @@
       "review": "Examen",
       "segment-timerange": "Plage temporelle du segment",
       "selected-item": "Élément sélectionné",
+      "selected-model": "Modèle Sélectionné",
       "setup-model": "Configurer le modèle"
     },
     "assistant": {
       "ai-assistant": "Assistant AI",
       "agents-action": {
         "bar-expert": "Configuration du graphique en barres",
+        "business-analytic-expert": "Reformulation de la saisie utilisateur",
         "calendar-expert": "Configuration du calendrier de la carte thermique",
         "card-expert": "Configuration de la carte",
+        "custom-prompt-expert": "Impliquant des configurations personnalisées",
         "data-expert": "Regroupement et agrégation des valeurs",
         "date-grouper-expert": "Identification du regroupement de dates",
         "date-picker-expert": "Identification de la plage temporelle",
         "filter-expert": "Configuration des filtres nécessaires",
+        "filter-query-analyzer-expert": "Identification des champs de filtre nécessaires",
         "general-view-expert": "Sélection du type de vue",
+        "group-finder-expert": "Recherche du groupe d'entités le plus pertinent",
         "heatmap-expert": "Configuration de la carte thermique",
+        "input-expert": "Traitement de votre entrée",
         "line-expert": "Configuration du graphique en ligne",
+        "output-expert": "Génération de la réponse",
         "pie-expert": "Configuration du graphique en secteurs",
+        "query-analyzer-expert": "Identification des champs pour la visualisation",
+        "scatter-expert": "Configuration du nuage de points",
+        "state-expert": "Définition d'un flux de travail",
         "table-expert": "Configuration du tableau",
+        "topic-router-expert": "Définition du sujet de conversation",
         "topology-expert": "Recherche des champs pertinents des entités commerciales"
       },
       "agents-error": {
         "bar-expert": "Échec de la configuration du graphique en barres",
+        "business-analytic-expert": "Échec de la reformulation de la saisie utilisateur",
         "calendar-expert": "Échec de la configuration du calendrier de la carte thermique",
         "card-expert": "Échec de la configuration de la carte",
+        "custom-prompt-expert": "Échec de l'application des configurations personnalisées",
         "data-expert": "Échec du regroupement et de l'agrégation des valeurs",
         "date-grouper-expert": "Échec de l'identification du regroupement de dates",
         "date-picker-expert": "Échec de l'identification de la plage temporelle",
         "filter-expert": "Échec de la configuration des filtres nécessaires",
+        "filter-query-analyzer-expert": "Échec de l'identification des champs de filtre nécessaires",
         "general-view-expert": "Échec de la sélection du type de vue",
+        "group-finder-expert": "Échec de la recherche du groupe d'entités le plus pertinent",
         "heatmap-expert": "Échec de la configuration de la carte thermique",
+        "input-expert": "Échec du traitement de votre entrée",
         "line-expert": "Échec de la configuration du graphique en ligne",
+        "output-expert": "Échec de la génération de la réponse",
         "pie-expert": "Échec de la configuration du graphique en secteurs",
+        "query-analyzer-expert": "Échec de l'identification des champs pour la visualisation",
+        "scatter-expert": "Échec de la configuration du nuage de points",
+        "state-expert": "Échec de la définition du flux de travail",
         "table-expert": "Échec de la configuration du tableau",
+        "topic-router-expert": "Échec de la définition du sujet de conversation",
         "topology-expert": "Échec de la recherche des champs pertinents des entités commerciales"
       },
       "app": "Application",
       "assistant": "Assistant",
+      "assistant-interpretation": "Interprétation de l’assistant",
       "assistant-prompt": "Que devez-vous faire?",
+      "chart-summary": "Résumé du graphique",
       "chat": "Chat",
+      "chats": "Chats",
+      "chat-current": "Chat en cours",
       "delete-confirmation": "Confirmez-vous la suppression de ce chat?",
       "edit-message": "Modifier le dernier message",
+      "get-chart-summary": "Obtenir le résumé du graphique",
       "message": "Message",
       "message-error": "Message d'erreur",
       "messages": "Messages",
       "new-chat": "Nouveau chat",
-      "new-message": "Nouveau message",
+      "new-conversation": "Nouvelle conversation",
       "question-example": "Exemple de questions",
-      "type-message": "Tapez votre message..."
+      "type-message": "Tapez votre message...",
+      "view-generated": "La vue a été générée avec succès."
     },
     "business-entities": {
       "add-field": "Ajouter un champ",
@@ -305,7 +332,8 @@
       "yearmonth": "yearmonth"
     },
     "details": {
-      "details": "Détails"
+      "details": "Détails",
+      "see-details": "Voir les détails"
     },
     "device": {
       "active": "Actif",
@@ -477,6 +505,14 @@
     "profile": {
       "profile": "Profil"
     },
+    "prompts": {
+      "delete-confirmation": "Confirmez-vous la suppression de ce prompt?",
+      "edit-prompt": "Modifier le prompt",
+      "edit-prompt-system": "Vous ne pouvez pas modifier le prompt système",
+      "new-prompt": "Nouveau Prompt",
+      "prompts": "Prompts",
+      "prompt-id": "Copier l’ID du prompt"
+    },
     "relation": {
       "add": "Ajouter des relations",
       "direction": "Direction",
@@ -530,12 +566,14 @@
       "help-mode-enable": "Activer le mode d'aide utilisateur",
       "import-config": "Importer la configuration",
       "link-to-platform": "Lier à la plateforme IoT externe (https://votre-lien-vers-plateforme)",
+      "module-management": "gestion du module de résumé JS",
       "see-all-data-source": "Voir toutes les sources de données",
       "signing-key": "Clé de signature",
       "skip-duplicates": "Ignorer les doublons",
       "tab-title": "Titre de l'onglet",
       "update-signing-key": "Mettre à jour la clé de signature",
       "upload-bundle": "Télécharger le bundle",
+      "upload-module": "Téléverser le module",
       "url": "URL",
       "url-path": "Chemin de l'URL",
       "url-path-tooltip": "Le chemin URL après le nom de domaine. Après avoir mis à jour ce champ, un rechargement de la page est nécessaire.",
@@ -549,6 +587,7 @@
       "clear-all-executions": "Effacer Toutes les Exécutions",
       "clear-all-executions-warning": "Êtes-vous sûre de vouloir effacer toutes les exécutions de toutes vos tâches?",
       "execute-task": "Exécuter Tâche",
+      "execute-time-unit-beginning": "Exécuter au début de l'unité de temps",
       "execution-status": "Statut d'exécution",
       "executions": "Exécutions",
       "go-to-entity": "Aller à l'entité",
@@ -584,19 +623,23 @@
         "anomaly-autodiscovery": "Découverte automatique des anomalies",
         "build-model": "Construire un modèle d'anomalie",
         "cache-refresh": "Actualiser le cache",
+        "custom-prompt": "Exécuter une invite personnalisée",
         "filter-request": "Charger le filtre de vue",
         "find-anomalies": "Trouver des anomalies",
         "job-type": "Type de travail",
+        "migration-import": "Importer la configuration",
         "pred-model-accuracy": "Calculer la précision du modèle",
         "pred-model-partial-fit": "Réentrainer le modèle",
         "pred-model-refresh": "Sauvegarder le résultat du modèle de prédiction dans TB",
         "pred-model-train": "Entraîner le modèle de prédiction",
         "save-calc-result": "Sauvegarder le résultat du calcul dans TB",
         "save-telemetry": "Sauvegarder la télémétrie dans TB",
+        "task-sequence-execution": "Exécuter la séquence de tâches",
         "test-calc-field": "Tester le calcul",
         "topology-discovery": "Découverte de topologie",
         "view-report-assistance": "Réponse de l'assistant IA",
-        "view-report-build": "Construire le rapport de vue"
+        "view-report-build": "Construire le rapport de vue",
+        "view-summary": "Générer le résumé de la vue"
       }
     },
     "timeinterval": {
@@ -619,6 +662,7 @@
         "function": "Ce champ sert de zone d'entrée pour le code du champ de calcul",
         "item": "Appareil/actif dont vous souhaitez utiliser la télémétrie pour tester votre fonction.",
         "key": "Nom de la télémétrie pour enregistrer les données de calcul dans ThingsBoard : \"_ECD_votre-clé-de-calcul\"",
+        "range-by-minutes": "Pour de meilleures performances et une meilleure efficacité du système, nous recommandons d'éviter l'agrégation au niveau de la minute.",
         "time-range-strategy": "Lors de l'exécution de la tâche de rafraîchissement, le système charge les données selon la plage horaire définie par une stratégie particulière. <b>Stratégie dynamique</b> ne chargera que les nouvelles données pour le champ de calcul qui sont apparues depuis la dernière exécution. <b>Stratégie fixe</b> utilisera la même plage prédéfinie pour chaque exécution suivante."
       },
       "dashboard": {
@@ -781,6 +825,7 @@
       "main-value": "Valeur principale",
       "no-data": "Aucune donnée",
       "no-data-anomaly": "Il n'y a pas d'anomalies pour la période sélectionnée.",
+      "open-view-new-tab": "Ouvrir la vue dans un nouvel onglet",
       "remove-view": "Supprimer la vue",
       "save-changes": "Enregistrer les modifications",
       "save-config": "Enregistrer configuration",
@@ -804,7 +849,7 @@
           "history": "Historique"
         },
         "chart-option": "Option de graphique",
-        "chart-settings": "Paramètres du graphique",
+        "chart-settings": "Paramètres",
         "colors": {
           "add-annotation": "Ajouter une annotation",
           "annotations": "Annotations",
@@ -896,6 +941,7 @@
         "view-mode-fields": {
           "get-filter-from-url": "Obtenir les valeurs du filtre depuis l'URL",
           "hidden-filters": "Filtres cachés",
+          "hide-ai-summary-button": "Masquer le bouton de résumé IA",
           "hide-anomaly-chart": "Masquer le graphique des anomalies",
           "hide-anomaly-list": "Masquer la liste des anomalies",
           "hide-by-option": "Masquer l'option par",
@@ -962,6 +1008,7 @@
     "widget": {
       "all": "Tous",
       "description": "Description",
+      "description-enter": "Saisir la description",
       "system": "Système",
       "title": "Titre"
     },

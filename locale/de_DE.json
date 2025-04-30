@@ -117,53 +117,80 @@
       "review": "Überprüfung",
       "segment-timerange": "Segment-Zeitbereich",
       "selected-item": "Ausgewähltes Element",
+      "selected-model": "Ausgewähltes Modell",
       "setup-model": "Modell einrichten"
     },
     "assistant": {
       "ai-assistant": "AI-Assistent",
       "agents-action": {
         "bar-expert": "Balkendiagramm konfigurieren",
+        "business-analytic-expert": "Benutzereingabe wird umformuliert",
         "calendar-expert": "Heatmap-Kalender konfigurieren",
         "card-expert": "Karte konfigurieren",
+        "custom-prompt-expert": "Benutzerdefinierte Konfigurationen implizieren",
         "data-expert": "Werte gruppieren und aggregieren",
         "date-grouper-expert": "Datumsgruppierung identifizieren",
         "date-picker-expert": "Zeitraum identifizieren",
         "filter-expert": "Erforderliche Filter konfigurieren",
+        "filter-query-analyzer-expert": "Notwendige Filterfelder identifizieren",
         "general-view-expert": "Ansichtstyp auswählen",
+        "group-finder-expert": "Die relevanteste Gruppe von Entitäten suchen",
         "heatmap-expert": "Heatmap konfigurieren",
+        "input-expert": "Eingabe verarbeiten",
         "line-expert": "Liniendiagramm konfigurieren",
+        "output-expert": "Antwort generieren",
         "pie-expert": "Kreisdiagramm konfigurieren",
+        "query-analyzer-expert": "Felder zur Visualisierung identifizieren",
+        "scatter-expert": "Streudiagramm wird konfiguriert",
+        "state-expert": "Einen Arbeitsablauf definieren",
         "table-expert": "Tabelle konfigurieren",
+        "topic-router-expert": "Konversationsthema wird definiert",
         "topology-expert": "Relevante Geschäftsfeld-Daten suchen"
       },
       "agents-error": {
         "bar-expert": "Fehler beim Konfigurieren des Balkendiagramms",
+        "business-analytic-expert": "Benutzereingabe konnte nicht umformuliert werden",
         "calendar-expert": "Fehler beim Konfigurieren des Heatmap-Kalenders",
         "card-expert": "Fehler beim Konfigurieren der Karte",
+        "custom-prompt-expert": "Fehler beim Anwenden benutzerdefinierter Konfigurationen",
         "data-expert": "Fehler beim Gruppieren und Aggregieren der Werte",
         "date-grouper-expert": "Fehler beim Identifizieren der Datumsgruppierung",
         "date-picker-expert": "Fehler beim Identifizieren des Zeitraums",
         "filter-expert": "Fehler beim Konfigurieren der erforderlichen Filter",
+        "filter-query-analyzer-expert": "Fehler beim Identifizieren der notwendigen Filterfelder",
         "general-view-expert": "Fehler beim Auswählen des Ansichtstyps",
+        "group-finder-expert": "Fehler beim Finden der relevantesten Entitätsgruppe",
         "heatmap-expert": "Fehler beim Konfigurieren der Heatmap",
+        "input-expert": "Fehler beim Verarbeiten der Eingabe",
         "line-expert": "Fehler beim Konfigurieren des Liniendiagramms",
+        "output-expert": "Fehler beim Generieren der Antwort",
         "pie-expert": "Fehler beim Konfigurieren des Kreisdiagramms",
+        "query-analyzer-expert": "Fehler beim Identifizieren der Felder für die Visualisierung",
+        "scatter-expert": "Streudiagramm konnte nicht konfiguriert werden",
+        "state-expert": "Fehler beim Definieren des Workflows",
         "table-expert": "Fehler beim Konfigurieren der Tabelle",
+        "topic-router-expert": "Konversationsthema konnte nicht definiert werden",
         "topology-expert": "Fehler beim Suchen nach relevanten Geschäftsfeld-Daten"
       },
       "app": "App",
       "assistant": "Assistent",
+      "assistant-interpretation": "Interpretation des Assistenten",
       "assistant-prompt": "Was möchten Sie tun?",
+      "chart-summary": "Diagrammzusammenfassung",
       "chat": "Chat",
+      "chats": "Chats",
+      "chat-current": "Aktueller Chat",
       "delete-confirmation": "Möchten Sie diesen Chat wirklich löschen?",
       "edit-message": "Letzte Nachricht bearbeiten",
+      "get-chart-summary": "Diagrammzusammenfassung abrufen",
       "message": "Nachricht",
       "message-error": "Fehlermeldung",
       "messages": "Nachrichten",
       "new-chat": "Neuer Chat",
-      "new-message": "Neue Nachricht",
+      "new-conversation": "Neue Konversation",
       "question-example": "Beispiel für Fragen",
-      "type-message": "Geben Sie Ihre Nachricht ein..."
+      "type-message": "Geben Sie Ihre Nachricht ein...",
+      "view-generated": "Die Ansicht wurde erfolgreich erstellt."
     },
     "business-entities": {
       "add-field": "Feld hinzufügen",
@@ -305,7 +332,8 @@
       "yearmonth": "Jahr-Monat"
     },
     "details": {
-      "details": "Details"
+      "details": "Details",
+      "see-details": "Details anzeigen"
     },
     "device": {
       "active": "Aktiv",
@@ -477,6 +505,14 @@
     "profile": {
       "profile": "Profil"
     },
+    "prompts": {
+      "delete-confirmation": "Bestätigen Sie das Löschen dieses Prompts?",
+      "edit-prompt": "Prompt bearbeiten",
+      "edit-prompt-system": "Systemprompt kann nicht bearbeitet werden",
+      "new-prompt": "Neuer Prompt",
+      "prompts": "Prompts",
+      "prompt-id": "Prompt-ID kopieren"
+    },
     "relation": {
       "add": "Beziehungen hinzufügen",
       "direction": "Richtung",
@@ -530,12 +566,14 @@
       "help-mode-enable": "Hilfe-Benutzermodus aktivieren",
       "import-config": "Konfiguration importieren",
       "link-to-platform": "Mit externer IoT-Plattform verbinden (https://your-link-to-platform)",
+      "module-management": "verwaltung des JS-Zusammenfassungsmoduls",
       "see-all-data-source": "Alle Datenquellen anzeigen",
       "signing-key": "Signaturschlüssel",
       "skip-duplicates": "Duplikate überspringen",
       "tab-title": "Tab-Titel",
       "update-signing-key": "Signaturschlüssel aktualisieren",
       "upload-bundle": "Bundle hochladen",
+      "upload-module": "Modul hochladen",
       "url": "URL",
       "url-path": "URL-Pfad",
       "url-path-tooltip": "Der URL-Pfad nach dem Domainnamen. Nach dem Aktualisieren dieses Felds ist ein Seitenneuladen erforderlich.",
@@ -550,6 +588,7 @@
       "clear-all-executions-warning": "Sind Sie sicher, dass Sie alle Ausführungen aller Aufgaben löschen möchten?",
       "execute-task": "Aufgabe ausführen",
       "execution-status": "Ausführungsstatus",
+      "execute-time-unit-beginning": "Am Anfang der Zeiteinheit ausführen",
       "executions": "Ausführungen",
       "go-to-entity": "Zur Entität gehen",
       "go-to-task": "Zur Aufgabe gehen",
@@ -584,19 +623,23 @@
         "anomaly-autodiscovery": "Anomalie-Autodetektion",
         "build-model": "Anomalie-Modell erstellen",
         "cache-refresh": "Cache aktualisieren",
+        "custom-prompt": "Benutzerdefinierte Eingabe ausführen",
         "filter-request": "Ansichtsfilter laden",
         "find-anomalies": "Anomalien finden",
         "job-type": "Job-Typ",
+        "migration-import": "Konfiguration importieren",
         "pred-model-accuracy": "Genauigkeit des Vorhersagemodells",
         "pred-model-partial-fit": "Modell nachtrainieren",
         "pred-model-refresh": "Vorhersagemodellergebnis in TB speichern",
         "pred-model-train": "Vorhersagemodell trainieren",
         "save-calc-result": "Berechnungsergebnis in TB speichern",
         "save-telemetry": "Telemetrie in TB speichern",
+        "task-sequence-execution": "Aufgabensequenz ausführen",
         "test-calc-field": "Berechnungsfeld testen",
         "topology-discovery": "Topologie-Erkennung",
         "view-report-assistance": "Antwort des KI-Assistenten",
-        "view-report-build": "Ansichtsbericht erstellen"
+        "view-report-build": "Ansichtsbericht erstellen",
+        "view-summary": "Ansichtszusammenfassung erstellen"
       }
     },
     "timeinterval": {
@@ -619,6 +662,7 @@
         "function": "Dieses Feld dient als Eingabebereich für den Code des Berechnungsfelds.",
         "item": "Gerät/Asset, dessen Telemetrie Sie zum Testen Ihrer Funktion verwenden möchten.",
         "key": "Name der Telemetrie zum Speichern von Berechnungsdaten in ThingsBoard: \"_ECD_Ihr-Berechnungs-Schlüssel\"",
+        "range-by-minutes": "Für eine bessere Leistung und Systemeffizienz empfehlen wir, auf eine Aggregation auf Minutenebene zu verzichten.",
         "time-range-strategy": "Während der Ausführung der Aktualisierungsaufgabe lädt das System Daten basierend auf dem Zeitbereich, der durch eine bestimmte Strategie festgelegt wird. <b>Dynamische Strategie</b> lädt nur neue Daten für das Berechnungsfeld, die seit der letzten Ausführung aufgetreten sind. <b>Feste Strategie</b> verwendet denselben vordefinierten Bereich für jede nächste Ausführung."
       },
       "dashboard": {
@@ -781,6 +825,7 @@
       "main-value": "Hauptwert",
       "no-data": "Keine Daten",
       "no-data-anomaly": "Es gibt keine Anomalien für den ausgewählten Zeitraum",
+      "open-view-new-tab": "Ansicht in neuem Tab öffnen",
       "remove-view": "Ansicht entfernen",
       "save-changes": "Änderungen speichern",
       "save-config": "Konfiguration speichern",
@@ -896,6 +941,7 @@
         "view-mode-fields": {
           "get-filter-from-url": "Filterwerte aus URL abrufen",
           "hidden-filters": "Verborgene Filter",
+          "hide-ai-summary-button": "KI-Zusammenfassungsbutton ausblenden",
           "hide-anomaly-chart": "Anomalie-Diagramm ausblenden",
           "hide-anomaly-list": "Anomalie-Liste ausblenden",
           "hide-by-option": "Nach-Option ausblenden",
@@ -962,6 +1008,7 @@
     "widget": {
       "all": "Alle",
       "description": "Beschreibung",
+      "description-enter": "Beschreibung eingeben",
       "system": "System",
       "title": "Titel"
     },

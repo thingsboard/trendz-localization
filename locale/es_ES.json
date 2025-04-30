@@ -38,7 +38,7 @@
       "this-item": "este objeto",
       "upload": "Cargar",
       "verify": "Verificar",
-      "yes": "yes"
+      "yes": "Si"
     },
     "admin": {
       "home": "Inicio",
@@ -117,53 +117,80 @@
       "review": "Revisar",
       "segment-timerange": "Intervalo de tiempo del segmento",
       "selected-item": "Elemento seleccionado",
+      "selected-model": "Modelo Seleccionado",
       "setup-model": "Configuración de modelo"
     },
     "assistant": {
       "ai-assistant": "Asistente de AI",
       "agents-action": {
         "bar-expert": "Configurando gráfico de barras",
+        "business-analytic-expert": "Reformulando la entrada del usuario",
         "calendar-expert": "Configurando calendario de mapa de calor",
         "card-expert": "Configurando tarjeta",
+        "custom-prompt-expert": "Implica configuraciones personalizadas",
         "data-expert": "Agrupando y agregando valores",
         "date-grouper-expert": "Identificando la agrupación de fechas",
         "date-picker-expert": "Identificando el rango de tiempo",
         "filter-expert": "Configurando los filtros necesarios",
+        "filter-query-analyzer-expert": "Identificando los campos de filtro necesarios",
         "general-view-expert": "Seleccionando tipo de vista",
+        "group-finder-expert": "Buscando el grupo de entidades más relevante",
         "heatmap-expert": "Configurando mapa de calor",
+        "input-expert": "Procesando tu entrada",
         "line-expert": "Configurando gráfico de líneas",
+        "output-expert": "Generando respuesta",
         "pie-expert": "Configurando gráfico de pastel",
+        "query-analyzer-expert": "Identificando campos para la visualización",
+        "scatter-expert": "Configurando el diagrama de dispersión",
+        "state-expert": "Definiendo un flujo de trabajo",
         "table-expert": "Configurando tabla",
+        "topic-router-expert": "Definiendo el tema de la conversación",
         "topology-expert": "Buscando campos relevantes de entidades empresariales"
       },
       "agents-error": {
         "bar-expert": "Error al configurar el gráfico de barras",
+        "business-analytic-expert": "Error al reformular la entrada del usuario",
         "calendar-expert": "Error al configurar el calendario de mapa de calor",
         "card-expert": "Error al configurar la tarjeta",
+        "custom-prompt-expert": "Error al aplicar configuraciones personalizadas",
         "data-expert": "Error al agrupar y agregar valores",
         "date-grouper-expert": "Error al identificar la agrupación de fechas",
         "date-picker-expert": "Error al identificar el rango de tiempo",
         "filter-expert": "Error al configurar los filtros necesarios",
+        "filter-query-analyzer-expert": "Error al identificar los campos de filtro necesarios",
         "general-view-expert": "Error al seleccionar el tipo de vista",
+        "group-finder-expert": "Error al encontrar el grupo de entidades más relevante",
         "heatmap-expert": "Error al configurar el mapa de calor",
+        "input-expert": "Error al procesar tu entrada",
         "line-expert": "Error al configurar el gráfico de líneas",
+        "output-expert": "Error al generar una respuesta",
         "pie-expert": "Error al configurar el gráfico de pastel",
+        "query-analyzer-expert": "Error al identificar los campos para la visualización",
+        "scatter-expert": "Error al configurar el diagrama de dispersión",
+        "state-expert": "Error al definir el flujo de trabajo",
         "table-expert": "Error al configurar la tabla",
+        "topic-router-expert": "Error al definir el tema de la conversación",
         "topology-expert": "Error al encontrar campos relevantes de entidades empresariales"
       },
       "app": "Aplicación",
       "assistant": "Asistente",
+      "assistant-interpretation": "Interpretación del asistente",
       "assistant-prompt": "¿Qué necesitas hacer?",
+      "chart-summary": "Resumen del gráfico",
       "chat": "Chat",
+      "chats": "Chats",
+      "chat-current": "Chat actual",
       "delete-confirmation": "¿Confirmas la eliminación de este chat?",
       "edit-message": "Editar último mensaje",
+      "get-chart-summary": "Obtener resumen del gráfico",
       "message": "Mensaje",
       "message-error": "Mensaje de error",
       "messages": "Mensajes",
       "new-chat": "Nuevo chat",
-      "new-message": "Nuevo mensaje",
+      "new-conversation": "Nueva conversación",
       "question-example": "Ejemplo de preguntas",
-      "type-message": "Escribe tu mensaje..."
+      "type-message": "Escribe tu mensaje...",
+      "view-generated": "La vista se generó con éxito."
     },
     "business-entities": {
       "add-field": "Agregar campo",
@@ -305,7 +332,8 @@
       "yearmonth": "yearmonth"
     },
     "details": {
-      "detailes": "Detalles"
+      "detailes": "Detalles",
+      "see-details": "Ver detalles"
     },
     "device": {
       "active": "Activo",
@@ -477,6 +505,14 @@
     "profile": {
       "profile": "Perfil"
     },
+    "prompts": {
+      "delete-confirmation": "¿Confirmas la eliminación de este prompt?",
+      "edit-prompt": "Editar prompt",
+      "edit-prompt-system": "No puedes editar el prompt del sistema",
+      "new-prompt": "Nuevo Prompt",
+      "prompts": "Prompts",
+      "prompt-id": "Copiar ID del prompt"
+    },
     "relation": {
       "add": "Agregar relaciones",
       "direction": "Dirección",
@@ -530,12 +566,14 @@
       "help-mode-enable": "Habilitar modo de ayuda para el usuario",
       "import-config": "Importar Configuración",
       "link-to-platform": "Enlace a la plataforma IoT externa (https://tu-enlace-a-la-plataforma)",
+      "module-management": "gestión del módulo de resumen JS",
       "see-all-data-source": "Ver todas las fuentes de datos",
       "signing-key": "Clave de firma",
       "skip-duplicates": "Omitir Duplicados",
       "tab-title": "Título de la pestaña",
       "update-signing-key": "Actualizar clave de firma",
       "upload-bundle": "Cargar paquete",
+      "upload-module": "Subir módulo",
       "url": "URL",
       "url-path": "Ruta de URL",
       "url-path-tooltip": "La ruta de URL después del nombre de dominio. Después de actualizar este campo, se requiere recargar la página.",
@@ -549,6 +587,7 @@
       "clear-all-executions": "Borrar Todas las Ejecuciones",
       "clear-all-executions-warning": "¿Estás segura de que deseas borrar todas las ejecuciones de todas tus tareas?",
       "execute-task": "Ejecutar Tarea",
+      "execute-time-unit-beginning": "Ejecutar al comienzo de la unidad de tiempo",
       "execution-status": "Estado de Ejecución",
       "executions": "Ejecuciones",
       "go-to-entity": "Dirigirse a la entidad",
@@ -584,19 +623,23 @@
         "anomaly-autodiscovery": "Autodescubrimiento de anomalías",
         "build-model": "Construir modelo de anomalía",
         "cache-refresh": "Actualizar caché",
+        "custom-prompt": "Ejecutar mensaje personalizado",
         "filter-request": "Cargar filtro de vista",
         "find-anomalies": "Encontrar anomalías",
         "job-type": "Tipo de Job",
+        "migration-import": "Importar configuración",
         "pred-model-accuracy": "Precisión del modelo de predicción",
         "pred-model-partial-fit": "Reentrenar modelo",
         "pred-model-refresh": "Guardar resultado del modelo de predicción en TB",
         "pred-model-train": "Entrenar modelo de predicción",
         "save-calc-result": "Guardar resultado de cálculo en TB",
         "save-telemetry": "Guardar telemetría en TB",
+        "task-sequence-execution": "Ejecutar secuencia de tareas",
         "test-calc-field": "Probar cálculo",
         "topology-discovery": "Descubrimiento de topología",
         "view-report-assistance": "Respuesta del asistente de IA",
-        "view-report-build": "Generar informe de vista"
+        "view-report-build": "Generar informe de vista",
+        "view-summary": "Generar resumen de vista"
       }
     },
     "timeinterval": {
@@ -619,6 +662,7 @@
         "function": "Este campo sirve como área de entrada para el código del Campo de Cálculo.",
         "item": "Dispositivo/activo cuya telemetría deseas usar para probar tu función.",
         "key": "Nombre de la telemetría para guardar los datos de cálculo en ThingsBoard: \"_ECD_tu-clave-de-cálculo\"",
+        "range-by-minutes": "Para un mejor rendimiento y eficiencia del sistema, recomendamos evitar la agregación a nivel de minutos.",
         "time-range-strategy": "Durante la ejecución de la tarea de actualización, el sistema carga datos según el rango de tiempo establecido por una estrategia en particular. <b>Estrategia dinámica</b> cargará solo los datos nuevos para el campo de cálculo que aparecieron desde la última ejecución. <b>Estrategia fija</b> usará el mismo rango predefinido para cada ejecución posterior."
       },
       "dashboard": {
@@ -781,6 +825,7 @@
       "main-value": "Valor Principal",
       "no-data": "Sin datos",
       "no-data-anomaly": "No hay anomalías para el período seleccionado",
+      "open-view-new-tab": "Abrir vista en una nueva pestaña",
       "remove-view": "Eliminar visualización",
       "save-changes": "Guardar cambios",
       "save-config": "Guardar configuración",
@@ -896,6 +941,7 @@
         "view-mode-fields": {
           "get-filter-from-url": "OBTENER valores de filtro de la URL",
           "hidden-filters": "Filtros ocultos",
+          "hide-ai-summary-button": "Ocultar botón de resumen de IA",
           "hide-anomaly-chart": "Ocultar gráfico de anomalías",
           "hide-anomaly-list": "Ocultar lista de anomalías",
           "hide-by-option": "Ocultar opción 'Por'",
@@ -962,6 +1008,7 @@
     "widget": {
       "all": "Todos",
       "description": "Descripción",
+      "description-enter": "Ingresar descripción",
       "system": "Sistema",
       "title": "Título"
     },
