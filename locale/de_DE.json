@@ -48,7 +48,17 @@
       "aggregation": "Aggregation"
     },
     "alarm": {
-      "alarm": "Alarm"
+      "alarm": "Alarm",
+      "alarm-type": "Alarmtyp",
+      "alarms-configuration": "Alarmkonfiguration",
+      "anomaly-deletion-behavior": "Verhalten beim Löschen einer Anomalie",
+      "severity": {
+        "critical": "Kritische Schwere",
+        "major": "Große Schwere",
+        "minor": "Geringe Schwere",
+        "score": "Punktzahl",
+        "warning": "Warnstufe"
+      }
     },
     "anomalies": {
       "actions": {
@@ -58,9 +68,14 @@
       },
       "add-field": "Feld hinzufügen",
       "advanced": {
+        "anomaly-detection-settings": "Einstellungen zur Anomalieerkennung",
         "cluster-count": "Clusteranzahl",
+        "cluster-merge": "Cluster zusammenführen",
+        "cluster-separate": "Getrennt halten",
+        "clustering-settings": "Clustering-Einstellungen",
         "distance-function": "Abstands-Funktion",
-        "join-clusters": "Cluster zusammenführen",
+        "join-clusters": "Strategie zum Zusammenführen von Clustern",
+        "limits": "Grenzwerte",
         "max-epsilon": "Max Epsilon",
         "max-iteration": "Max Iterationen",
         "max-point-count": "Max Punkteanzahl",
@@ -70,8 +85,11 @@
         "min-cluster-points": "Min Punkte im Cluster",
         "min-interval-duration": "Min Intervall-Dauer",
         "min-interval-points": "Min Punkte im Intervall",
+        "model-properties": "Erweiterte Modelleigenschaften",
+        "normalize-aggregation": "Aggregation normalisieren",
         "score-threshold-percent": "Score Schwellenwert Prozent",
         "segment-points": "Segmentpunkte",
+        "segmentation-settings": "Segmentierungseinstellungen",
         "sliding-step-percent": "Schiebeschritt-Prozent",
         "timewindow-type": "Zeitfenster-Typ"
       },
@@ -98,16 +116,21 @@
       "cluster-algorithm": "Cluster-Algorithmus",
       "cluster-info": "Cluster-Informationen",
       "comparison-type": "Vergleichstyp",
+      "create-copy": "Ich möchte eine Kopie dieses Modells erstellen, wenn das Fenster geschlossen wird",
       "create-model": "Modell erstellen",
       "create-new-copy": "Neue Kopie erstellen",
       "critical": "Kritisch",
       "delete-warning": "Das Löschen dieses Modells ist endgültig und kann nicht rückgängig gemacht werden. Sind Sie sicher, dass Sie es löschen möchten?",
+      "delete-warning-dependency": "Das Löschen dieses Anomalie-Modells ist dauerhaft und kann nicht rückgängig gemacht werden. Es wird derzeit in anderen Entitäten verwendet, die durch das Entfernen beeinträchtigt werden könnten. Sind Sie sicher, dass Sie es löschen möchten?",
       "discover-anomalies": "Anomalien entdecken",
       "dynamic": "Dynamisch",
-      "enable-autodiscovery": "Autodiscovery aktivieren",
+      "enable-alarms-creation": "Erstellung von Anomaliealarmen aktivieren",
+      "enable-autodiscovery": "Automatische Erkennung von Anomalien aktivieren",
+      "enable-saving-data": "Speichern von Anomaliedaten aktivieren",
       "full-range": "Vollbereich",
       "hide-table": "Tabelle ausblenden",
       "model": "Modell",
+      "model-parameters": "Parameter des Anomalie-Modells",
       "model-properties": "Modell-Eigenschaften",
       "new-anomaly-model": "Neues Anomalie-Modell",
       "override-model": "Aktuelles Modell überschreiben",
@@ -115,10 +138,15 @@
       "range": "Bereich",
       "rebuild-model": "Modell neu aufbauen",
       "review": "Überprüfung",
+      "save-model": "Modell speichern",
+      "save-warning": "Alle zuvor erkannten Anomalien gehen verloren, wenn Sie das Modell neu erstellen. Sind Sie sicher, dass Sie fortfahren möchten?",
+      "save-warning-dependency": "Alle zuvor erkannten Anomalien gehen verloren, wenn Sie das Modell neu erstellen. Zusätzlich wird dieses Modell von anderen Entitäten verwendet, die betroffen sein könnten. Sind Sie sicher, dass Sie es löschen möchten?",
       "segment-timerange": "Segment-Zeitbereich",
       "selected-item": "Ausgewähltes Element",
       "selected-model": "Ausgewähltes Modell",
-      "setup-model": "Modell einrichten"
+      "setup-model": "Modell einrichten",
+      "telemetry-storage-frequency": "Frequenz der Telemetriespeicherung",
+      "timerange": "Zeitraum für die Anomalieerkennung"
     },
     "assistant": {
       "ai-assistant": "AI-Assistent",
@@ -360,6 +388,8 @@
       "function": "Funktion"
     },
     "headers": {
+      "alarms-creation": "Alarm-Erstellung",
+      "anomaly-autodiscovery": "Automatische Anomalieerkennung",
       "attention": "Achtung",
       "cluster-id": "Cluster-ID",
       "created": "Erstellt",
@@ -480,6 +510,7 @@
       "show-history": "Verlauf anzeigen",
       "sliding-window-step-percent": "Gleitender Fenster-Schritt (Prozent)",
       "sliding-window-step-units": "Gleitender Fenster-Schritt (Einheiten)",
+      "template": "Vorlage",
       "time-error": "Akzeptabler Zeitfehler",
       "time-in": "Zeit in",
       "train-model": "Modell trainieren",
@@ -571,6 +602,7 @@
       "signing-key": "Signaturschlüssel",
       "skip-duplicates": "Duplikate überspringen",
       "tab-title": "Tab-Titel",
+      "update-settings": "Einstellungen aktualisieren",
       "update-signing-key": "Signaturschlüssel aktualisieren",
       "upload-bundle": "Bundle hochladen",
       "upload-module": "Modul hochladen",
@@ -652,6 +684,20 @@
       "history": "Verlauf"
     },
     "tooltip": {
+      "anomalies": {
+        "alarm-type": "Der Typ/die Kategorie des Alarms, der für erkannte Anomalien erstellt wird.",
+        "cluster-algorithm": "Wähle, wie die Daten in Cluster gruppiert werden. Punkte, die in keine Gruppe gut passen, werden als Anomalien betrachtet.",
+        "cluster-count": "Anzahl der zu erstellenden Cluster.",
+        "cluster-joining-strategy": "Diese Einstellung erlaubt es dem System, Anomalien aus benachbarten Segmenten, auch wenn sie zu unterschiedlichen Clustern gehören, als eine einzige kontinuierliche Anomalie zu behandeln.",
+        "distance-function": "Wie Ähnlichkeiten zwischen Telemetrie-Zeitreihen gemessen werden.",
+        "key": "Telemetrieschlüssel, der während der Neuberechnung/Aktualisierung verwendet wird, um denselben Anomalie-Score und Index zu erzeugen.",
+        "max-epsilon": "Maximale Distanz zwischen Punkten, um sie als Teil derselben Gruppe zu betrachten.",
+        "max-iteration": "Wie oft K-Means versuchen soll, die Clusterbildung zu verbessern.",
+        "min-cluster-points": "Minimale Anzahl benachbarter Punkte zur Bildung eines gültigen Clusters.",
+        "score-threshold-percent": "Dies ist der prozentuale Schwellenwert zur Klassifizierung eines Segments als anormal. Segmente mit einem Score über dem Schwellenwert werden als Anomalien markiert.",
+        "storage-frequency": "Dieser Parameter gibt die Aggregationsebene an, auf der der Anomalie-Score und dessen Index in ThingsBoard gespeichert werden. Sie darf nicht größer als der Zeitbereich des Segments sein.",
+        "timerange": "Historischer Datenzeitraum, den das Modell zum Trainieren verwendet."
+      },
       "calculations": {
         "batch": "Wenn die Option 'Batch-Berechnung' deaktiviert ist, schreiben Sie eine Funktion, die mit einem Wert gleichzeitig arbeitet. Bei aktivierter Batch-Berechnung arbeiten Sie mit dem gesamten Roh-Telemetrie-Array.",
         "batch-doc": "Batch-Berechnungsdokumentation anzeigen",
@@ -829,6 +875,7 @@
       "remove-view": "Ansicht entfernen",
       "save-changes": "Änderungen speichern",
       "save-config": "Konfiguration speichern",
+      "save-view": "Ansicht speichern",
       "sector-name": "Sektorname",
       "sector-value": "Sektorwert",
       "see-task": "Aufgabe anzeigen",
