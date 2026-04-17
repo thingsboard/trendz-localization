@@ -18,6 +18,7 @@
       "edit": "Bearbeiten",
       "export": "Exportieren",
       "finish": "Fertigstellen",
+      "next": "Weiter:",
       "generate": "Erstellen",
       "import": "Importieren",
       "move": "Verschieben",
@@ -45,7 +46,9 @@
     },
     "admin": {
       "home": "Home",
-      "settings": "Einstellungen"
+      "settings": "Einstellungen",
+      "widget-bad-link": "Die Visualisierung unter dem aktuellen Link wurde nicht gefunden. Sie wurde möglicherweise gelöscht oder der Link enthält einen Fehler.",
+      "widget-no-license": "Analytics-Lizenz abgelaufen."
     },
     "aggregation": {
       "aggregation": "Aggregation"
@@ -65,11 +68,8 @@
     },
     "anomalies": {
       "actions": {
-        "apply-to": "Anwenden auf",
-        "autodiscovery": "Autodiscovery",
         "rebuild": "Neuaufbau"
       },
-      "add-field": "Feld hinzufügen",
       "advanced": {
         "anomaly-detection-settings": "Einstellungen zur Anomalieerkennung",
         "cluster-count": "Clusteranzahl",
@@ -99,58 +99,563 @@
       "anomalies": "Anomalien",
       "anomalies-not-found": "Es wurden keine Anomalien für den ausgewählten Zeitraum gefunden.",
       "anomalies-table": {
-        "average-score": "Durchschnittlicher Score",
         "item": "Element",
-        "max-score": "Max Score",
-        "score-index": "Score Index",
-        "total-duration": "Gesamtdauer"
+        "score-index": "Score Index"
       },
       "anomaly-models": "Anomalie-Modelle",
       "anomaly-review": "Anomalie-Überprüfung",
       "anomaly-score": "Anomalie-Score",
-      "anomaly-score-calendar": "Anomalie-Score Kalender",
-      "anomaly-score-dynamic": "Anomalie-Score Dynamisch",
-      "anomaly-summary": "Anomalie-Zusammenfassung",
-      "anomaly-task": "Anomalie-Aufgabe",
-      "autodiscovery-config": "Autodiscovery-Konfiguration für Anomalien",
-      "build-model": "Modell erstellen",
       "calendar": "Kalender",
-      "clear-old-tasks-prompt": "Möchten Sie alte Anomalie-Aufgaben löschen?",
       "cluster-algorithm": "Cluster-Algorithmus",
       "cluster-info": "Cluster-Informationen",
       "comparison-type": "Vergleichstyp",
       "create-copy": "Ich möchte eine Kopie dieses Modells erstellen, wenn das Fenster geschlossen wird",
       "create-model": "Modell erstellen",
-      "create-new-copy": "Neue Kopie erstellen",
       "critical": "Kritisch",
-      "delete-warning": "Das Löschen dieses Modells ist endgültig und kann nicht rückgängig gemacht werden. Sind Sie sicher, dass Sie es löschen möchten?",
-      "delete-warning-dependency": "Das Löschen dieses Anomalie-Modells ist dauerhaft und kann nicht rückgängig gemacht werden. Es wird derzeit in anderen Entitäten verwendet, die durch das Entfernen beeinträchtigt werden könnten. Sind Sie sicher, dass Sie es löschen möchten?",
-      "discover-anomalies": "Anomalien entdecken",
-      "dynamic": "Dynamisch",
-      "enable-alarms-creation": "Erstellung von Anomaliealarmen aktivieren",
-      "enable-autodiscovery": "Automatische Erkennung von Anomalien aktivieren",
-      "enable-saving-data": "Speichern von Anomaliedaten aktivieren",
-      "full-range": "Vollbereich",
-      "hide-table": "Tabelle ausblenden",
-      "model": "Modell",
-      "model-parameters": "Parameter des Anomalie-Modells",
-      "model-properties": "Modell-Eigenschaften",
-      "new-anomaly-model": "Neues Anomalie-Modell",
-      "override-model": "Aktuelles Modell überschreiben",
-      "override-model-prompt": "Möchten Sie das aktuelle Modell überschreiben oder eine neue Kopie erstellen?",
-      "range": "Bereich",
-      "rebuild-model": "Modell neu aufbauen",
-      "review": "Überprüfung",
-      "review-disable-tooltip": "Um diese Ansicht zu aktivieren, wählen Sie bitte eine Zeile in der Tabelle unten aus",
-      "save-model": "Modell speichern",
-      "save-warning": "Alle zuvor erkannten Anomalien gehen verloren, wenn Sie das Modell neu erstellen. Sind Sie sicher, dass Sie fortfahren möchten?",
-      "save-warning-dependency": "Alle zuvor erkannten Anomalien gehen verloren, wenn Sie das Modell neu erstellen. Zusätzlich wird dieses Modell von anderen Entitäten verwendet, die betroffen sein könnten. Sind Sie sicher, dass Sie es löschen möchten?",
       "segment-timerange": "Segment-Zeitbereich",
-      "selected-item": "Ausgewähltes Element",
       "selected-model": "Ausgewähltes Modell",
-      "setup-model": "Modell einrichten",
-      "telemetry-storage-frequency": "Frequenz der Telemetriespeicherung",
-      "timerange": "Zeitraum für die Anomalieerkennung"
+      "reprocess-progress-steps": {
+        "INITIALIZING": "Initialisierung",
+        "FIND_ANOMALIES": "Anomalien suchen",
+        "SAVE_ANOMALIES": "Anomalien speichern",
+        "UPDATE_MODEL_INFO": "Modellinformationen aktualisieren",
+        "FINISH": "Abschließen"
+      },
+      "progress-steps": {
+        "INITIALIZING": "Initialisierung",
+        "MODEL_CREATION": "Modell erstellen",
+        "MODEL_CREATION_DATASET_FETCHING": "Datensatz laden",
+        "MODEL_BUILDING": "Modell aufbauen",
+        "MODEL_BUILDING_BUILD_STATISTICS": "Statistiken berechnen",
+        "MODEL_BUILDING_BUILD_SEGMENTS": "Segmente aufbauen",
+        "MODEL_BUILDING_FIND_CLUSTERS": "Cluster suchen",
+        "MODEL_BUILDING_DISCOVER_ANOMALIES": "Anomalien erkennen",
+        "MODEL_BUILDING_BUILD_CLUSTER_INFOS": "Cluster-Informationen aufbauen",
+        "MODEL_BUILDING_FINALIZE_MODEL": "Modell abschließen",
+        "MODEL_SAVING": "Modell speichern",
+        "ANOMALY_REWRITING": "Anomalien neuschreiben",
+        "FINISH": "Abschließen"
+      },
+      "anomalies-list": {
+        "search-placeholder": "Entitäten suchen...",
+        "col": {
+          "alarm": "Alarm",
+          "duration": "Dauer",
+          "impact": "Auswirkung",
+          "item": "Element",
+          "model": "Modell",
+          "score": "Score",
+          "time": "Zeit"
+        }
+      },
+      "be-list": {
+        "title": "Profilabdeckung",
+        "all-models": "Alle Modelle →",
+        "col": {
+          "alerts": "Alarme",
+          "anomalies": "Anomalien",
+          "items": "Elemente",
+          "models": "Modelle",
+          "monitoring": "Monitoring",
+          "profile": "Profil",
+          "track-score": "Score verfolgen"
+        },
+        "action": {
+          "create": "+ Erstellen",
+          "view": "Anzeigen"
+        },
+        "type": {
+          "asset": "Asset-Profil",
+          "customer": "Kundenprofil",
+          "device": "Geräteprofil",
+          "external": "Externes Profil"
+        }
+      },
+      "filter": {
+        "alarms-on": "Alarme AN",
+        "all": "Alle",
+        "all-profiles": "Alle Profile",
+        "asset-profiles": "Asset-Profile",
+        "device-profiles": "Geräteprofile",
+        "failed": "Fehlgeschlagen",
+        "items": "Elemente",
+        "monitoring-on": "Monitoring AN",
+        "no-monitoring": "Kein Monitoring",
+        "search-profiles": "Profile suchen...",
+        "select-profile-type": "Profiltyp auswählen"
+      },
+      "models-list": {
+        "search-placeholder": "Modelle suchen...",
+        "col": {
+          "alerts": "Alarme",
+          "anomalies": "Anomalien",
+          "created": "Erstellt",
+          "entities": "Entitäten",
+          "monitoring": "Monitoring",
+          "name": "Name",
+          "purpose": "Zweck",
+          "status": "Status",
+          "track-score": "Score verfolgen"
+        },
+        "delete-warning": "Möchten Sie dieses Anomalie-Modell wirklich löschen?",
+        "delete-warning-dependency": "Dieses Anomalie-Modell wird von anderen Entitäten verwendet, die davon betroffen sein werden. Möchten Sie es wirklich löschen?",
+        "rename-success": "Anomalie-Modell erfolgreich umbenannt"
+      },
+      "monitoring-cards": {
+        "across-profiles": "über {{count}} Profile",
+        "affected": "Betroffen",
+        "alarms-escalated": "Eskalierte Alarme",
+        "auto-triggered": "automatisch aus Anomalien ausgelöst",
+        "by-severity": "Nach Schweregrad",
+        "critical": "Kritisch",
+        "cumulative-time-at-risk": "kumulative Risikozeit",
+        "deviations": "Abweichungen",
+        "deviation-impact": "Auswirkung der Abweichung",
+        "fleet-health": "Flottengesundheit",
+        "fleet-stability": "Flottenstabilität",
+        "function-monitoring": "Funktionsüberwachung",
+        "healthy-ratio": "{{healthy}} / {{total}} gesund",
+        "indeterminate": "Unbestimmt",
+        "items-monitored": "Überwachte Elemente",
+        "no-alarms": "Keine Alarme",
+        "noise-reduction": "Rauschunterdrückung",
+        "of": "von {{count}}",
+        "operational-automation": "Betriebsautomatisierung",
+        "scans": "Scans",
+        "stress-index": "Stressindex",
+        "time-in-deviation": "Zeit in Abweichung",
+        "detection-impact": "Erkennungsauswirkung",
+        "anomalies-discovered": "Anomalien entdeckt",
+        "from-n-scans": "aus {{count}} Scans",
+        "monitoring-coverage": "Monitoring-Abdeckung",
+        "fleet-status": "Flottenstatus",
+        "monitoring-enabled": "Monitoring aktiviert",
+        "monitoring-disabled": "Monitoring deaktiviert",
+        "not-scanned": "Nicht gescannt",
+        "with-anomalies": "Mit Anomalien",
+        "healthy": "Gesund",
+        "total": "Gesamt",
+        "scan-runs": "Scan-Läufe",
+        "no-anomalies": "Keine Anomalien"
+      },
+      "page-title": "Anomalieerkennung",
+      "panel": {
+        "open-in-model": "Im Modell öffnen",
+        "open-model": "Modell öffnen",
+        "run-scan": "Scan ausführen"
+      },
+      "panel-info": {
+        "affected": "Betroffen",
+        "alarms": "Alarme",
+        "cluster": "Cluster",
+        "created": "Erstellt",
+        "devices": "Geräte",
+        "disabled": "Deaktiviert",
+        "duration": "Dauer",
+        "enabled": "Aktiviert",
+        "end": "Ende",
+        "entities": "Entitäten",
+        "impact": "Auswirkung",
+        "last-run": "Letzter Lauf",
+        "model": "Modell",
+        "monitoring": "Monitoring",
+        "off": "Aus",
+        "on": "Ein",
+        "peak-score": "Höchster Score",
+        "profile": "Profil",
+        "score": "Score: {{value}}",
+        "start": "Start",
+        "telemetry": "Telemetrie"
+      },
+      "purpose": {
+        "advanced": "Erweitert",
+        "comparative-analysis": "Vergleichsanalyse",
+        "health-monitoring": "Gesundheitsüberwachung",
+        "operational-monitoring": "Betriebsüberwachung",
+        "quick-scan": "Schnellscan"
+      },
+      "status": {
+        "canceled": "Abgebrochen",
+        "failed": "Fehlgeschlagen",
+        "queued": "In Warteschlange",
+        "ready": "Bereit",
+        "running": "Läuft"
+      },
+      "system-pulse": {
+        "anomalies": "Anomalien",
+        "days-ago": "T. zuvor",
+        "empty-subtitle": "Der Systempuls wird hier angezeigt, sobald die Überwachung aktiviert ist.",
+        "empty-title": "Noch keine Scans durchgeführt",
+        "hours-ago": "Std. zuvor",
+        "items-scanned": "Elemente gescannt",
+        "just-now": "gerade eben",
+        "minutes-ago": "Min. zuvor",
+        "no-anomalies": "Keine Anomalien",
+        "title": "Systempuls"
+      },
+      "reprocess-task": {
+        "scope": "Bereich",
+        "trained-items": "Trainierte Elemente",
+        "all-in-profile": "Alle im Profil",
+        "specific": "Spezifisch"
+      },
+      "anomaly-model-details": {
+        "header": {
+          "anomaly-detection": "Anomalieerkennung",
+          "scan-recent-data": "Kürzliche Daten scannen",
+          "more-actions": "Weitere Aktionen",
+          "duplicate": "Duplizieren",
+          "monitoring": "Überwachung"
+        },
+        "tabs": {
+          "result": "Ergebnis",
+          "properties": "Eigenschaften"
+        },
+        "actions": {
+          "rebuild": "Neuaufbau",
+          "build-model": "Modell erstellen"
+        },
+        "tasks": {
+          "title": "Anomalie-Aufgaben"
+        },
+        "progress": {
+          "building-model": {
+            "title": "Modell wird erstellt...",
+            "subtitle": "Daten analysieren und Erkennungsalgorithmen trainieren"
+          },
+          "scanning-recent-data": {
+            "title": "Kürzliche Daten werden gescannt...",
+            "subtitle": "Anomalieerkennung im ausgewählten Datenbereich ausführen"
+          }
+        },
+        "analysis-scope": {
+          "title": "Analysebereich",
+          "time-window": "Zeitfenster",
+          "items-scanned": "Gescannten Elemente",
+          "fields": "Felder",
+          "profile": "Profil",
+          "total-impact": "Gesamtauswirkung",
+          "last-scan": "Letzter Scan"
+        },
+        "anomaly-list": {
+          "empty-text": "Keine Anomalien erkannt. Alle Entitäten arbeiten normal.",
+          "anomaly": "Anomalie",
+          "title": "Anomalie-Score-Tabelle",
+          "all-items-placeholder": "Alle Elemente",
+          "search-items-placeholder": "Elemente durchsuchen..."
+        },
+        "anomaly-summary": {
+          "ranked-items": "Rangliste der Elemente",
+          "top-anomalies": "Top-Anomalien",
+          "column": {
+            "peak-score": "Höchster Score",
+            "total-duration": "Gesamtdauer",
+            "total-impact": "Gesamtauswirkung",
+            "last-seen": "Letzte Ansicht",
+            "alarms": "Alarme"
+          },
+          "no-anomalies": "Keine Anomalien"
+        },
+        "anomaly-monitoring": {
+          "continuous-monitoring": "Ständige Überwachung",
+          "periodic-scanning": "Periodisches Scannen",
+          "score-telemetry": "Score-Telemetrie",
+          "alarm-generation": "Alarmgenerierung",
+          "configure": "Konfigurieren"
+        },
+        "anomaly-key-metrics": {
+          "title": "Schlüsselmetriken",
+          "anomalies": "Anomalien",
+          "affected": "Betroffene",
+          "peak-score": "Höchster Score",
+          "health": "Gesundheit"
+        },
+        "anomaly-cluster-analysis": {
+          "title": "Clusteranalyse",
+          "clusters": "Cluster",
+          "dominant": "Dominant",
+          "score-range": "Score-Bereich"
+        },
+        "top-anomalies": {
+          "empty-title": "Alle überwachten Entitäten arbeiten normal."
+        },
+        "anomaly-model-config": {
+          "model-name": {
+            "title": "Modellname",
+            "subtitle": "Den Namen des Anomaliemodells festlegen."
+          },
+          "entity-selection": {
+            "title": "Entitätsauswahl",
+            "subtitle": "Wählen Sie eine Business-Entität, um den Analyseumfang festzulegen."
+          },
+          "device-profiles": "Geräteprofile",
+          "asset-profiles": "Asset-Profile",
+          "select-profile": "Profil auswählen",
+          "search-profiles-placeholder": "Profile suchen...",
+          "entities-to-analyze": {
+            "subtitle": "Wählen Sie aus, welche Entitäten in der Anomalieerkennung enthalten sein sollen."
+          },
+          "loading-items": "Elemente werden geladen...",
+          "select-mode": "Modus auswählen",
+          "all-entities": "Alle Entitäten",
+          "manual": "Manuell",
+          "include-all-items-from-profile": "Alle {{count}} Elemente aus dem Profil einschließen",
+          "manual-selection": "Manuelle Auswahl",
+          "pick-specific-entities-to-analyze": "Bestimmte Entitäten zum Analysieren auswählen",
+          "entities-included": "Entitäten enthalten",
+          "telemetry-selection": {
+            "title": "Telemetrieauswahl",
+            "subtitle": "Wählen Sie die Telemetrie-Felder, die das Modell auf ungewöhnliche Muster überwachen soll."
+          },
+          "type-to-search-telemetry": "Zum Suchen tippen...",
+          "date-range-selection": {
+            "title": "Zeitraumauswahl",
+            "subtitle": "Den historischen Zeitraum für die Analyse festlegen."
+          }
+        },
+        "anomaly-monitoring-config": {
+          "periodic-scanning": {
+            "title": "Periodisches Scannen",
+            "description": "Anomalieerkennung in einem wiederkehrenden Zeitplan über eingehende Daten ausführen."
+          },
+          "timerange": "Zeitraum",
+          "align-to-time-unit-start": "Am Anfang der Zeiteinheit ausrichten",
+          "score-saving": {
+            "title": "Anomalie-Score-Speicherung",
+            "description": "Anomalie-Scores als Telemetrie zurück in ThingsBoard-Entitäten schreiben."
+          },
+          "telemetry-key": "Telemetrie-Schlüssel",
+          "write-frequency": "Schreibfrequenz",
+          "every": "Alle",
+          "generate-alerts": {
+            "title": "Alarme generieren",
+            "description": "ThingsBoard-Alarme auslösen, wenn Anomalie-Scores Schwellenwerte überschreiten."
+          },
+          "alarm-type": "Alarmtyp",
+          "on-deletion": "Beim Löschen",
+          "delete-alarm": "Alarm löschen",
+          "clear-alarm": "Alarm löschen zurücksetzen",
+          "severity-thresholds": "Schwellenwerte nach Schweregrad"
+        },
+        "activity-heatmap": {
+          "title": "Aktivitäts-Heatmap",
+          "legend": {
+            "not-scanned": "Nicht gescannt",
+            "clean": "Sauber",
+            "low": "Niedrig",
+            "medium": "Mittel",
+            "high": "Hoch"
+          }
+        },
+        "copy-suffix": " (Kopie)",
+        "errors": {
+          "name-field-required": "Das Feld Name ist erforderlich!",
+          "entity-field-required": "Das Feld Entität ist erforderlich!",
+          "telemetry-field-required": "Wählen Sie mindestens ein Telemetrie-Feld!",
+          "model-properties-invalid": "Einige Felder der Modelleigenschaften sind ungültig!"
+        },
+        "toasts": {
+          "model-saved": "Das Anomalie-Modell wurde gespeichert!",
+          "model-build-failed": "Modellerstellung fehlgeschlagen:",
+          "model-enabled": "Das Anomalie-Modell wurde aktiviert",
+          "model-building-cancelled": "Die Modellerstellung des Anomalie-Modells wurde abgebrochen!"
+        },
+        "modals": {
+          "change-anomaly-name": "Anomaliename",
+          "change-base": "Sie werden {{changes}} ändern.",
+          "rebuild-base": "Sie werden das Modell neu aufbauen. Alle zuvor erkannten Anomalien gehen verloren, wenn Sie das Modell neu aufbauen.",
+          "dependent-additional": "Zusätzlich wird dieses Modell von anderen Entitäten verwendet, die möglicherweise betroffen sind. Sind Sie sicher, dass Sie fortfahren möchten?",
+          "continue": "Möchten Sie fortfahren?",
+          "used-by-others-base": "Dieses Modell wird von anderen Entitäten verwendet, die möglicherweise betroffen sind. Sind Sie sicher, dass Sie fortfahren möchten?"
+        }
+      },
+      "anomaly-wizard": {
+        "steps": {
+          "select-intent": "Intention auswählen",
+          "configure": "Konfigurieren",
+          "review": "Überprüfen"
+        },
+        "header": {
+          "anomaly-detection": "Anomalieerkennung",
+          "create-new-model": "Neues Modell erstellen"
+        },
+        "progress": {
+          "building-model": {
+            "title": "Modell wird erstellt...",
+            "subtitle": "Daten analysieren und Erkennungsalgorithmen trainieren"
+          }
+        },
+        "toasts": {
+          "model-build-failed": "Modellerstellung fehlgeschlagen:"
+        },
+        "config": {
+          "title": "Eingabeumfang konfigurieren",
+          "subtitle": "Definieren Sie die Entitäten, Telemetriepunkte und den Zeitbereich für die Anomalieerkennung.",
+          "entity-selection": {
+            "title": "Entitätsauswahl",
+            "subtitle": "Wählen Sie ein Geräte- oder Asset-Profil, um den Analyseumfang festzulegen."
+          },
+          "device-profiles": "Geräteprofile",
+          "asset-profiles": "Asset-Profile",
+          "select-profile": "Profil auswählen",
+          "item-count": "{{count}} Elemente",
+          "search-profiles-placeholder": "Profile suchen...",
+          "entities-to-analyze": {
+            "subtitle": "Wählen Sie aus, welche Entitäten in die Anomalieerkennung einbezogen werden sollen."
+          },
+          "loading-items": "Elemente werden geladen...",
+          "select-mode": "Modus auswählen",
+          "all-entities": "Alle Entitäten",
+          "manual": "Manuell",
+          "include-all-items-from-profile": "Alle {{count}} Elemente aus dem Profil einschließen",
+          "manual-selection": "Manuelle Auswahl",
+          "pick-specific-entities-to-analyze": "Bestimmte Entitäten zum Analysieren auswählen",
+          "entities-included": "Entitäten enthalten",
+          "entities-search-placeholder": "Entitäten suchen...",
+          "telemetry-selection": {
+            "title": "Telemetrieauswahl",
+            "subtitle": "Wählen Sie die Telemetrie-Schlüssel, die das Modell auf ungewöhnliche Muster überwachen soll.",
+            "type-to-search": "Zum Suchen tippen..."
+          },
+          "date-range-selection": {
+            "title": "Zeitraumauswahl",
+            "subtitle": "Den historischen Zeitraum für die Analyse festlegen."
+          },
+          "date-quick": {
+            "all-available": "Alle verfügbar",
+            "last-30-days": "Letzte 30 Tage",
+            "last-90-days": "Letzte 90 Tage",
+            "last-year": "Letztes Jahr",
+            "last-3-years": "Letzte 3 Jahre"
+          }
+        },
+        "intents": {
+          "title": "Was möchten Sie erkennen?",
+          "subtitle": "Wählen Sie eine Erkennungsstrategie passend zu Ihrem Ziel. Jede Option konfiguriert optimale Model-Einstellungen.",
+          "recommended": "EMPFOHLEN",
+          "advanced": {
+            "label": "Möchten Sie die Modellparameter vollständig kontrollieren?",
+            "button": "Erweiterte Konfiguration"
+          },
+          "quick-scan": {
+            "title": "Schnellscan",
+            "description": "Schnelle Basis, um offensichtliche Abweichungen in einem aktuellen Zeitfenster zu erkennen.",
+            "example": "Plötzlicher Temperaturanstieg in Kältespeichereinheiten"
+          },
+          "operational-monitoring": {
+            "title": "Betriebsüberwachung",
+            "description": "Kontinuierliche Alarmierung bei Abweichungen von bekannten saisonalen oder betrieblichen Mustern.",
+            "example": "Alarm, wenn eine Pumpe vom wöchentlichen Druckzyklus abweicht"
+          },
+          "comparative-analysis": {
+            "title": "Vergleichende Analyse",
+            "description": "Ermitteln Sie Ausreißer-Assets, die sich von ihrer Vergleichsgruppe unterscheiden.",
+            "example": "Welche Turbinen liegen unter dem Flotten-Durchschnitt?"
+          },
+          "health-monitoring": {
+            "title": "Gesundheitsüberwachung",
+            "description": "Erkennen Sie langsame Verschlechterung oder schleichende Veränderungen der gesamten Systemgesundheit über die Zeit.",
+            "example": "Allmählicher Wirkungsgradverlust in HVAC-Kompressoren über Monate"
+          },
+          "tags": {
+            "one-time-analysis": "Einmalanalyse",
+            "last-24h-7d": "Letzte 24h–7d",
+            "ongoing-alerts": "Laufende Alarme",
+            "rolling-window": "Gleitendes Fenster",
+            "cross-asset-compare": "Asset-übergreifender Vergleich",
+            "peer-benchmarking": "Peer-Benchmarking",
+            "long-term-trends": "Langfristige Trends",
+            "degradation-tracking": "Verschlechterungsverfolgung"
+          }
+        },
+        "review": {
+          "title": "Überprüfen & Erstellen",
+          "subtitle": "Feinabstimmung der Erkennungsparameter und anschließendes Starten Ihres Modells.",
+          "sensitivity": {
+            "title": "Sensitivität",
+            "subtitle": "Steuern Sie, wie aggressiv das Modell Anomalien meldet.",
+            "strict": {
+              "title": "Streng",
+              "description": "Minimiert Fehlalarme. Erkennt nur extreme Abweichungen vom Normalzustand."
+            },
+            "balanced": {
+              "title": "Ausgewogen",
+              "description": "Ausgewogener Ansatz für die meisten industriellen IoT-Umgebungen."
+            },
+            "dont-miss": {
+              "title": "Nichts verpassen",
+              "description": "Hohe Wiederfindungsrate (Recall). Markiert jede mögliche Abweichung für die manuelle Expertenprüfung."
+            }
+          },
+          "granularity": {
+            "title": "Erkennungsgranularität",
+            "subtitle": "Legen Sie fest, wie oft das Modell Daten auf Anomalien prüft.",
+            "sublabel": {
+              "30m": "30 MIN",
+              "1h": "JEDER STUNDE",
+              "3h": "ALLE 3 STUNDEN",
+              "6h": "ALLE 6 STUNDEN",
+              "12h": "ALLE 12 STUNDEN",
+              "1d": "TÄGLICH",
+              "2d": "ALLE 2 TAGE",
+              "1w": "WÖCHENTLICH",
+              "2w": "ALLE 2 WOCHEN",
+              "1mo": "MONATLICH"
+            }
+          }
+        },
+        "data-readiness": {
+          "empty-title": "Noch keine Konfiguration",
+          "empty-subtitle": "Wählen Sie ein Entitätsprofil und Elemente aus, um die Datenbereit-schaft zu bewerten.",
+          "title": "Datenbereitschaft",
+          "status-label": "STATUS",
+          "status": {
+            "pending": "AUSSTEHEND",
+            "excellent": "EXZELLENT",
+            "good": "GUT",
+            "fair": "ANGEMESSEN",
+            "poor": "SCHLECHT"
+          },
+          "metrics": {
+            "devices-selected": "Ausgewählte Geräte",
+            "telemetry-keys": "Telemetrie-Schlüssel",
+            "date-range": "Zeitraum",
+            "data-points": "Datenpunkte",
+            "step-frequency": "Schrittfrequenz"
+          },
+          "info": {
+            "pending": "Wählen Sie Telemetrie-Schlüssel und den Zeitraum aus, um die Datenbereitschaft zu bewerten.",
+            "sufficient": "Ausreichende Datenqualität für die Anomalieüberwachung.",
+            "may-affect": "Die Datenqualität kann die Genauigkeit der Anomalieerkennung beeinträchtigen.",
+            "insufficient": "Unzureichende Daten für eine zuverlässige Anomalieerkennung."
+          },
+          "duration": {
+            "years": "{{count}} Jahre",
+            "months": "{{count}} Monate",
+            "weeks": "{{count}} Wochen",
+            "days": "{{count}} Tage"
+          },
+          "frequency": {
+            "ms": "{{value}} ms",
+            "sec": "{{value}} Sek.",
+            "min": "{{value}} Min.",
+            "hr": "{{value}} Std.",
+            "days": "{{value}} Tage"
+          }
+        },
+        "multi-select": {
+          "no-results": "Keine Ergebnisse",
+          "just-now": "gerade jetzt",
+          "seconds-ago": "{{count}}s vor",
+          "minutes-ago": "{{count}} Min vor",
+          "hours-ago": "{{count}} Std. vor",
+          "days-ago": "{{count}} Tg. vor"
+        }
+      },
+      "tabs": {
+        "models": "Modelle",
+        "summary": "Übersicht"
+      }
     },
     "assistant": {
       "ai-assistant": "AI-Assistent",
@@ -176,6 +681,7 @@
         "data-expert": "Werte gruppieren und aggregieren",
         "date-grouper-expert": "Datumsgruppierung identifizieren",
         "date-picker-expert": "Zeitraum identifizieren",
+        "error-describer-expert": "Fehler beschreiben",
         "filter-expert": "Erforderliche Filter konfigurieren",
         "filter-query-analyzer-expert": "Notwendige Filterfelder identifizieren",
         "general-view-expert": "Ansichtstyp auswählen",
@@ -183,10 +689,13 @@
         "heatmap-expert": "Heatmap konfigurieren",
         "input-expert": "Eingabe verarbeiten",
         "line-expert": "Liniendiagramm konfigurieren",
+        "memory-manager-expert": "Speicher verwalten",
         "output-expert": "Antwort generieren",
         "pie-expert": "Kreisdiagramm konfigurieren",
         "query-analyzer-expert": "Felder zur Visualisierung identifizieren",
+        "result-analyzer-expert": "Ergebnisse analysieren",
         "scatter-expert": "Streudiagramm wird konfiguriert",
+        "simple-output-expert": "Einfache Antwort generieren",
         "state-expert": "Einen Arbeitsablauf definieren",
         "table-expert": "Tabelle konfigurieren",
         "topic-router-expert": "Konversationsthema wird definiert",
@@ -201,6 +710,7 @@
         "data-expert": "Fehler beim Gruppieren und Aggregieren der Werte",
         "date-grouper-expert": "Fehler beim Identifizieren der Datumsgruppierung",
         "date-picker-expert": "Fehler beim Identifizieren des Zeitraums",
+        "error-describer-expert": "Fehler beim Beschreiben von Fehlern",
         "filter-expert": "Fehler beim Konfigurieren der erforderlichen Filter",
         "filter-query-analyzer-expert": "Fehler beim Identifizieren der notwendigen Filterfelder",
         "general-view-expert": "Fehler beim Auswählen des Ansichtstyps",
@@ -208,10 +718,13 @@
         "heatmap-expert": "Fehler beim Konfigurieren der Heatmap",
         "input-expert": "Fehler beim Verarbeiten der Eingabe",
         "line-expert": "Fehler beim Konfigurieren des Liniendiagramms",
+        "memory-manager-expert": "Fehler beim Verwalten des Speichers",
         "output-expert": "Fehler beim Generieren der Antwort",
         "pie-expert": "Fehler beim Konfigurieren des Kreisdiagramms",
         "query-analyzer-expert": "Fehler beim Identifizieren der Felder für die Visualisierung",
+        "result-analyzer-expert": "Fehler beim Analysieren der Ergebnisse",
         "scatter-expert": "Streudiagramm konnte nicht konfiguriert werden",
+        "simple-output-expert": "Fehler beim Generieren einer einfachen Antwort",
         "state-expert": "Fehler beim Definieren des Workflows",
         "table-expert": "Fehler beim Konfigurieren der Tabelle",
         "topic-router-expert": "Konversationsthema konnte nicht definiert werden",
@@ -282,9 +795,15 @@
       "direction-required": "Richtung ist ein Pflichtfeld",
       "entity-description": "Entitätsbeschreibung",
       "entity-type-required": "Entitätstyp ist ein Pflichtfeld",
+      "error": {
+        "delete-failed": "Löschen der Geschäftseinheit fehlgeschlagen",
+        "load-failed": "Laden der Liste der Geschäftseinheiten fehlgeschlagen",
+        "update-failed": "Aktualisieren der Geschäftseinheit fehlgeschlagen"
+      },
       "field-type": "Feldtyp",
       "field-type-required": "Feldtyp ist ein Pflichtfeld",
       "hidden": "Versteckt",
+      "hide-hidden-entities": "Gelöschte Entitäten nicht anzeigen",
       "item": "Element",
       "items": "Elemente",
       "name-required": "Name ist ein Pflichtfeld",
@@ -295,10 +814,15 @@
       "scope-type": "Bereichstyp",
       "scope-type-required": "Bereichstyp ist ein Pflichtfeld",
       "share-with-customers": "Mit Kunden teilen",
+      "show-hidden-entities": "Gelöschte Entitäten anzeigen",
+      "success": {
+        "update": "Geschäftseinheit wurde erfolgreich aktualisiert"
+      },
       "table-name": "Tabellenname",
       "type": "Typ",
       "type-required": "Typ ist ein Pflichtfeld",
       "use-field-as-be-key": "Feld als Geschäftseinheitsschlüssel verwenden",
+      "deleted-tooltip": "Diese Entität wurde von der externen IoT-Plattform gelöscht",
       "use-field-as-telemetry": "Feld als Telemetrie-Zeitstempel verwenden"
     },
     "calculations": {
@@ -337,8 +861,16 @@
       "enter-username": "Benutzernamen eingeben",
       "inactive-license": "Inaktive Lizenz",
       "license": "Lizenz",
+      "license-banner-description": "Ihre Lizenz ist inaktiv. Aktivieren Sie sie, um alle Funktionen weiterhin nutzen zu können.",
+      "license-banner-title": "Lizenz inaktiv",
       "other": "Andere",
       "password": "Passwort",
+      "subscription-error": {
+        "tb-sync-error": "Ihre Plattformen sollten in den Systemadministrator-Einstellungen synchronisiert werden.",
+        "tb-sync-title": "Synchronisierungsfehler",
+        "license-error": "Ihre Lizenz ist inaktiv. Aktivieren Sie sie, um alle Funktionen weiterhin nutzen zu können.",
+        "license-title": "Lizenz Inaktiv"
+      },
       "username": "Benutzername"
     },
     "dashboard": {
@@ -652,6 +1184,9 @@
       "select-field-to-analyze": "Wählen Sie ein Feld zur Analyse aus",
       "select-item-desc": "Wählen Sie ein Element aus, um seine Felder zu überprüfen",
       "select-item-to-analyze": "Wählen Sie ein Element zur Analyse aus",
+      "no-items-available": "Keine Elemente verfügbar",
+      "no-metrics-to-analyze": "Erstellen Sie eine neue Metrik, um mit der Analyse zu beginnen",
+      "no-metrics-desc": "Keine Metriken zum Analysieren verfügbar",
       "show-inactive-telemetry": "Inaktive Telemetrie anzeigen",
       "start-axis-at-zero": "Autoskalierung",
       "statistics": "Statistiken",
@@ -700,6 +1235,10 @@
       "prediction-range": "Vorhersagebereich",
       "prediction-settings": "Vorhersageeinstellungen",
       "prediction-unit": "Vorhersageeinheit",
+      "progress-accuracy-subtitle": "Das trainierte Modell wird an Ihren Daten bewertet und Genauigkeitsmetriken berechnet.",
+      "progress-accuracy-title": "Genauigkeit wird berechnet…",
+      "progress-building-subtitle": "Trainingsdaten werden verarbeitet und das Vorhersagemodell angepasst. Dies kann einige Minuten dauern.",
+      "progress-building-title": "Modell wird erstellt…",
       "real-data": "Reale Daten",
       "save-warning": "Dieses Vorhersagemodell wird in anderen Entitäten verwendet. Möchten Sie es erneut trainieren?",
       "segment-strategy": "Segmentstrategie",
@@ -818,6 +1357,7 @@
     },
     "tasks": {
       "cancel-task": "Aufgabe abbrechen",
+      "initializing": "Initialisierung...",
       "clear-all-executions": "Alle Ausführungen löschen",
       "clear-all-executions-warning": "Sind Sie sicher, dass Sie alle Ausführungen aller Aufgaben löschen möchten?",
       "execute-task": "Aufgabe ausführen",
@@ -873,6 +1413,7 @@
         "task-sequence-execution": "Aufgabensequenz ausführen",
         "test-calc-field": "Berechnungsfeld testen",
         "topology-discovery": "Topologie-Erkennung",
+        "lite-topology-discovery": "Topologie-Erkennung (Lite)",
         "view-report-assistance": "Antwort des KI-Assistenten",
         "view-report-build": "Ansichtsbericht erstellen",
         "view-summary": "Ansichtszusammenfassung erstellen"
@@ -1093,7 +1634,7 @@
       "cancel-changes": "Änderungen abbrechen",
       "cancel-loading": "Laden abbrechen",
       "change-template": "Vorlage ändern",
-      "choose-folder": "Ordner auswählen",
+      "choose-folder": "Sammlung auswählen",
       "choose-folder-save": "Wählen Sie den Ordner zum Speichern",
       "columns": "Spalten",
       "compared-value": "Verglichener Wert",
@@ -1363,6 +1904,15 @@
       "widget-font": {
         "size": "Größe"
       }
+    },
+    "ai-not-configured": {
+      "title": "KI-Modell ist nicht konfiguriert",
+      "text": "Um KI-Funktionen zu verwenden, sollten Sie das KI-Modell in der",
+      "metric-explorer-text": "Um Metriken mit KI zu generieren, sollten Sie das KI-Modell in der",
+      "code-assistant-chat-text": "Um den KI-Assistenten zu verwenden, sollten Sie das KI-Modell in der",
+      "ai-assistant-chat-text": "Um den KI-Assistenten zu verwenden, sollten Sie das KI-Modell auf der Einstellungsseite konfigurieren",
+      "ai-widget-text": "Um den KI-Assistenten zu verwenden, sollten Sie das KI-Modell konfigurieren",
+      "link-text": "Einstellungsseite"
     }
   }
 }
